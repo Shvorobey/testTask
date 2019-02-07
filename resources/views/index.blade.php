@@ -7,7 +7,9 @@
         <h1 class="my-4" style="color:#C71585" >Добро пожаловать <br>
             <small>Предлагаю пройти мини-курс</small>
         </h1>
-        <form action="{{ route('post.Start') }}" method="POST"
+        <form
+                {{--action="{{ route('post.Start') }}" --}}
+                method="POST"
               enctype="multipart/form-data" style="margin: 50px auto">
             {{csrf_field()}}
             <div class="form-group">
@@ -27,28 +29,27 @@
                     </div>
                 @endif
 
-                <label for="exampleInputEmail1">Email address</label>
+                <label for="exampleInputEmail1">Введите Email:</label>
                 <input type="email" name="email" class="form-control" id="exampleInputEmail1"
                        aria-describedby="emailHelp"
-                       placeholder="Enter email">
-                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
-                    else.
+                       placeholder="example@email.com">
+                <small id="emailHelp" class="form-text text-muted">* поле обязательно для заполнения.
                 </small>
                 <br>
                 <div class="form-group">
-                    <label for="exampleFormControlFile1">Выберите изображение для аватара</label>
+                    <label for="exampleFormControlFile1">Загрузите изображение:</label>
                     <input type="file" name="img" class="form-control-file" id="exampleFormControlFile1">
                 </div>
             </div>
             <button type="submit" class="btn btn-primary">Next</button>
             <hr>
-            @foreach($users as $user)
+            @foreach($students as $student)
                 <div class="row">
-                    <div class="col-md-2"><img src="{{ asset('uploadedimages/'.$user->img) }}" class="img-fluid"
+                    <div class="col-md-2"><img src="{{ asset('avatars/'.$student->image) }}" class="img-fluid"
                                                alt="Responsive image" width="50" height="50"></div>
-                    <div class="col-md-4">{{ $user->email }}</div>
-                    <div class="col-md-3">{{ $user->count }}</div>
-                    <div class="col-md-3"> {{ $user->time }}</div>
+                    <div class="col-md-4">{{ $student->email }}</div>
+                    <div class="col-md-3">{{ $student->score }}</div>
+                    <div class="col-md-3"> {{ $student->time }}</div>
 
 
                 </div>

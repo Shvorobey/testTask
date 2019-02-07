@@ -8,53 +8,24 @@
             <small>Предлагаю пройти мини-курс</small>
         </h1>
 
-        <!-- Blog Post -->
-    {{--@foreach( $posts as $post)--}}
-
-
-    {{--<div class="card mb-4">--}}
-    {{--<img class="card-img-top" src="{{$post->img}}" alt="Card image cap">--}}
-    {{--<div class="card-body">--}}
-    {{--<h2 class="card-title" style="color:#008000">{{$post->title}}</h2>--}}
-    {{--<p class="card-text">{{$post->body}}</p>--}}
-    {{--<a href="#" class="btn btn-primary">Читать дальше &rarr;</a>--}}
-    {{--</div>--}}
-    {{--<div class="card-footer text-muted">--}}
-    {{--Создан: {{$post->created_at}}  <br>--}}
-    {{--Автор: <a href="{{route('posts_by_autor', $post->autors->key)}}">{{$post->autors->name}}</a>--}}
-    {{--Категории:--}}
-    {{--@foreach($post->categories as $category)--}}
-
-    {{--<a href="{{route('posts_by_category', $category->key)}}">{{$category->categories}}   </a>--}}
-    {{--@endforeach--}}
-    {{--</div>--}}
-    {{--</div>--}}
-    {{--@endforeach--}}
-
-
-    <!-- Pagination -->
-
-
-        {{--<ul class="pagination justify-content-center mb-4">--}}
-        {{--@if ($posts->currentPage()!=1)--}}
-        {{--<li><a class="page-item" href="?page=1"> Первая страница </a></li>--}}
-        {{--<li><a class="page-item" href="{{$posts->previousPageUrl()}}"> < </a></li>--}}
-        {{--@endif--}}
-
-        {{--@if ($posts->count ()>0)--}}
-        {{--@for ($count=1; $count<=$posts->lastPage(); $count++)--}}
-        {{--<li><a class="page-item @if ($count==$posts->currentPage()) current @endif" href="?page={{$count}}">{{$count}}</a></li>--}}
-
-        {{--@endfor--}}
-
-        {{--@else--}}
-        {{--<h1> <font size="15" color="aqua" face="Arial"> Мы работаем над тем, чтобы здесь что-то появилось ;) </font> </h1>--}}
-        {{--@endif--}}
-        {{--@if ($posts->currentPage() != $posts->lastPage())--}}
-        {{--<li><a class="page-item" href="{{$posts->nextPageUrl()}}"> > </a></li>--}}
-        {{--<li><a class="page-item" href="?page={{$posts->lastPage()}}"> Последняя страница </a></li>--}}
-        {{--@endif--}}
-        {{--</ul>--}}
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="text-center">Page with text.</h1>
+                    <div class="alert alert-warning" role="alert">
+                        Абза́ц (нем. Absatz — раздел, часть текста) — отрезок письменной речи, состоящий из одного или
+                        нескольких предложений. ... Для выделения абзаца его, помимо новой строки, печатают с красной
+                        строки, то есть отделяют вертикальным отступом от соседних абзацев и
+                        или делают абзацный отступ.
+                    </div>
+                    <form action="{{ route('post.text') }}" method="POST"
+                          enctype="multipart/form-data" style="margin: 50px auto">
+                        {{csrf_field()}}
+                        <button type="submit" class="btn btn-primary">Next</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 
 @endsection
