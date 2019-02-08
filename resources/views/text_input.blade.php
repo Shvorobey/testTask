@@ -41,7 +41,7 @@
     <div class="card my-4">
         <h5 class="card-header">Рекламный блок</h5>
         <div class="card-body">
-            <strong style="color:#ff0000"> Главное - правельные ответы </strong>
+            <strong style="color:#ff0000"> Главное - правильные ответы </strong>
         </div>
     </div>
 @endsection
