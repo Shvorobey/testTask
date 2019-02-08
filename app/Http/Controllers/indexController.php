@@ -12,7 +12,7 @@ class indexController extends Controller
     public function __invoke()
     {
         return view('index')->with([
-            'students' => Student::limit(10)->get()
+            'students' => Student::limit(10)->orderBy('id', 'desc')->get()
         ]);
     }
 
