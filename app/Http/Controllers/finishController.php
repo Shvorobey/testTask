@@ -24,7 +24,6 @@ class finishController extends Controller
                 $student->image = Session::get('image');
                 $student->time = Session::get('time');
                 $student->score = $question;
-//                dd($student);
                 try {
                     $student->save();
                 } catch (Exception $exception) {
@@ -35,8 +34,6 @@ class finishController extends Controller
                 return redirect()->route('start')->withErrors([
                     'error' => $exception->getMessage()]);
             }
-//            $data = Session::all();
-//            dd($data);
             return view('finish')->with([
                 'student' => $student
             ]);
