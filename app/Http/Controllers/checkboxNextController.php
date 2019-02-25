@@ -16,7 +16,6 @@ class checkboxNextController extends Controller
                 break;
             } else {
                 $request->session()->put('page_4', 1);
-//                dd($request->session()->all());
                 break;
             }
         }

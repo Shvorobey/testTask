@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Student;
+use function GuzzleHttp\Promise\all;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -18,12 +19,16 @@ class finishController extends Controller
                 $question_3 = Session::get('page_4');
                 $question_4 = Session::get('page_5');
                 $question = $question_1 + $question_2 + $question_3 + $question_4;
+                $timeStart = Session::get('time');
+                $timeFinish = date('U');
+                $timeTask = $timeFinish - $timeStart;
 
                 $student = new Student();
                 $student->email = Session::get('email');
                 $student->image = Session::get('image');
-                $student->time = Session::get('time');
+                $student->time = $timeTask;
                 $student->score = $question;
+
                 try {
                     $student->save();
                 } catch (Exception $exception) {

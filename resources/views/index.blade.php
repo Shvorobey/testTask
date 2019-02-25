@@ -18,9 +18,9 @@
                         {{$errors->first('error')}}
                     </div>
                 @endif
-                @if($errors->has('img'))
+                @if($errors->has('image'))
                     <div class="alert alert-danger">
-                        {{$errors->first('img')}}
+                        {{$errors->first('image')}}
                     </div>
                 @endif
                 @if($errors->has('email'))
