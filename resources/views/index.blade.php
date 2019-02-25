@@ -8,7 +8,6 @@
             <small>Предлагаю пройти мини-курс</small>
         </h1>
         <form
-                {{--action="{{ route('post.Start') }}" --}}
                 method="POST"
                 enctype="multipart/form-data" style="margin: 50px auto">
             {{csrf_field()}}
@@ -32,13 +31,15 @@
                 <label for="exampleInputEmail1">Введите Email:</label>
                 <input type="email" name="email" class="form-control" id="exampleInputEmail1"
                        aria-describedby="emailHelp"
-                       placeholder="example@email.com">
+                       placeholder="example@email.com"
+                       required>
                 <small id="emailHelp" class="form-text text-muted">* поле обязательно для заполнения.
                 </small>
                 <br>
                 <div class="form-group">
                     <label for="exampleFormControlFile1">Загрузите изображение:</label>
-                    <input type="file" name="image" class="form-control-file" id="exampleFormControlFile1">
+                    <input type="file" name="image" class="form-control-file" id="exampleFormControlFile1"
+                           required accept="image/jpeg,image/jpg,image/png,image/gif">
                 </div>
             </div>
             <button type="submit" class="btn btn-primary">Next</button>
