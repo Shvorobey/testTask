@@ -13,7 +13,7 @@ class saveFormController extends Controller
         if ($request->method() == 'POST') {
             $this->validate($request, [
                 'email' => 'required | email | string',
-                'image' => ' required | image | dimensions:max_width=250,max_height=500 |  file',
+                'image' => ' required | image | dimensions:max_width=500,max_height=500 |  file',
             ]);
 
             $image = $request->file('image');

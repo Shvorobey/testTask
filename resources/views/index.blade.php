@@ -38,6 +38,8 @@
                 <br>
                 <div class="form-group">
                     <label for="exampleFormControlFile1">Загрузите изображение:</label>
+                    <small id="emailHelp" class="form-text text-muted">* максимальный размер 500х500
+                    </small>
                     <input type="file" name="image" class="form-control-file" id="exampleFormControlFile1"
                            required accept="image/jpeg,image/jpg,image/png,image/gif">
                 </div>
